@@ -4,27 +4,27 @@
          // Render nested list.
          $data .= theme_item_list(array('items' => $children, 'title' => NULL, 'type' => $type, 'attributes' => $attributes));
        }
--      if ($i == 1) {
--        $attributes['class'][] = 'first';
-+      $mainDivAttributes['class'][] = "panel";
-+      $mainDivAttributes['class'][] = "panel-default";
-+      $attributes['class'][] = "panel-heading";
-+      switch ($i) {
-+        case 1:
-+          $attributes['class'][] = 'first';
-+          break;
-+        
-+        case $num_items:
-+          $attributes['class'][] = 'last';
-+          break;
++      if ($i == 1) {
++        $attributes['class'][] = 'first';
+-      $mainDivAttributes['class'][] = "panel";
+-      $mainDivAttributes['class'][] = "panel-default";
+-      $attributes['class'][] = "panel-heading";
+-      switch ($i) {
+-        case 1:
+-          $attributes['class'][] = 'first';
+-          break;
+-        
+-        case $num_items:
+-          $attributes['class'][] = 'last';
+-          break;
        }
--      if ($i == $num_items) {
--        $attributes['class'][] = 'last';
--      }
--      $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
-+      $output .= '<div' . drupal_attributes($mainDivAttributes) . '>';
-+      $output .= '<div' . drupal_attributes($attributes) . '>' . $data . '</div>';
-+      $output .= '</div>';
++      if ($i == $num_items) {
++        $attributes['class'][] = 'last';
++      }
++      $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
+-      $output .= '<div' . drupal_attributes($mainDivAttributes) . '>';
+-      $output .= '<div' . drupal_attributes($attributes) . '>' . $data . '</div>';
+-      $output .= '</div>';
      }
      $output .= "</$type>";
    }
