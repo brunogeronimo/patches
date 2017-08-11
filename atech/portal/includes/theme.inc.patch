@@ -1,5 +1,5 @@
---- theme_original.inc	2017-08-11 19:04:46.876822375 -0300
-+++ theme_atech.inc	2017-08-11 19:04:55.596866822 -0300
+--- a/includes/theme.inc	2017-08-11 19:04:46.876822375 -0300
++++ b/includes/theme.inc	2017-08-11 19:04:55.596866822 -0300
 @@ -2215,13 +2215,21 @@
          // Render nested list.
          $data .= theme_item_list(array('items' => $children, 'title' => NULL, 'type' => $type, 'attributes' => $attributes));
