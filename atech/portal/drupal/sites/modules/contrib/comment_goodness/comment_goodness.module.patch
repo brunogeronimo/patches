@@ -1,0 +1,13 @@
+diff --git a/comment_goodness.module b/comment_goodness.module
+index 73af4ba..ebecd3b 100644
+--- a/comment_goodness.module
++++ b/comment_goodness.module
+@@ -473,7 +473,7 @@ function comment_goodness_preprocess_comment(&$variables) {
+   $submitted_string = _comment_goodness_get_submitted_string($date_type);
+ 
+   $variables['submitted'] = t($submitted_string, array(
+-    '!username' => theme('username', array('account' => $variables['author'])),
++    '!username' => theme('username', array('account' => $comment)),
+     '!datetime' => $variables['created'],
+   ));
+ }
