@@ -1,0 +1,15 @@
+--- a/event_calendar_colors/event_calendar_colors.module	2017-08-18 18:04:30.644814295 -0300
++++ b/event_calendar_colors/event_calendar_colors.module	2017-08-18 18:04:41.380842333 -0300
+@@ -269,9 +269,9 @@
+   // Create css folder and add write css.
+   $path = DRUPAL_ROOT . '/' . variable_get('file_public_path', conf_path() . '/files/');
+   if (is_dir($path . '/event_calendar_colors')) {
+-    chmod($path . '/event_calendar_colors', 0755);
++    @chmod($path . '/event_calendar_colors', 0755);
+   } else {
+-    mkdir($path . '/event_calendar_colors');
+-    chmod($path . '/event_calendar_colors', 0755);
++    @mkdir($path . '/event_calendar_colors');
++    @chmod($path . '/event_calendar_colors', 0755);
+   }
+ }
